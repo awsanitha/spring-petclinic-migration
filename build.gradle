@@ -45,7 +45,7 @@ dependencies {
 group = 'org.springframework.samples'
 version = '1.5.1'
 description = 'petclinic'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 publishing {
     publications {
