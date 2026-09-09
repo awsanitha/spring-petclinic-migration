@@ -68,8 +68,8 @@ public class ClinicServiceTests {
         Owner owner = this.owners.findById(1);
         Assert.assertTrue(owner.getLastName().startsWith("Franklin"));
         Assert.assertEquals(1, owner.getPets().size());
-        Assert.assertNotNull(owner.getPets().get(0).getType());
-        Assert.assertEquals("cat", owner.getPets().get(0).getType().getName());
+        Assert.assertNotNull(owner.getPets().getFirst().getType());
+        Assert.assertEquals("cat", owner.getPets().getFirst().getType().getName());
     }
 
     @Test
@@ -167,7 +167,7 @@ public class ClinicServiceTests {
         Vet vet = EntityUtils.getById(vets, Vet.class, 3);
         Assert.assertEquals("Douglas", vet.getLastName());
         Assert.assertEquals(2, vet.getNrOfSpecialties());
-        Assert.assertEquals("dentistry", vet.getSpecialties().get(0).getName());
+        Assert.assertEquals("dentistry", vet.getSpecialties().getFirst().getName());
         Assert.assertEquals("surgery", vet.getSpecialties().get(1).getName());
     }
 
