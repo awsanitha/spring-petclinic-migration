@@ -6,8 +6,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Locale;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 
 import org.junit.Test;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -40,7 +40,7 @@ public class ValidatorTests {
         assertEquals(1, constraintViolations.size());
         ConstraintViolation<Person> violation = constraintViolations.iterator().next();
         assertEquals("firstName", violation.getPropertyPath().toString());
-        assertTrue(violation.getMessage().endsWith("not be empty"));
+        assertTrue(violation.getMessage().endsWith("not be blank"));
     }
 
 }
